@@ -259,7 +259,7 @@ class UnityRunnerBuildService(private val unityToolProvider: UnityToolProvider) 
                     build.buildTempDirectory
             )
         } else {
-            File(logFilePath)
+            File(build.checkoutDirectory, logFilePath)
         }
 
         arguments.add(logFile.absolutePath)

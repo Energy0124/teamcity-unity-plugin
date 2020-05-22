@@ -218,7 +218,7 @@
 <tr class="advancedSetting">
     <th><label for="${params.unityVersion}">Unity version:</label></th>
     <td>
-        <props:textProperty name="${params.unityVersion}" className="longField disableBuildTypeParams"/>
+        <props:textProperty name="${params.unityVersion}" className="longField"/>
         <span class="error" id="error_${params.unityVersion}"></span>
         <span class="smallNote">Specify the required Unity version, e.g 2018.2.</span>
     </td>
@@ -245,7 +245,7 @@
 <tr class="advancedSetting">
     <th><label for="${params.logFilePath}">Custom log path:</label></th>
     <td>
-        <props:textProperty name="${params.logFilePath}" className="longField disableBuildTypeParams"/>
+        <props:textProperty name="${params.logFilePath}" className="longField"/>
         <span class="error" id="error_${params.logFilePath}"></span>
         <span class="smallNote">Path for Unity log file</span>
     </td>

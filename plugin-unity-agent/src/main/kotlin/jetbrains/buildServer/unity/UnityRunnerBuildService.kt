@@ -264,8 +264,9 @@ class UnityRunnerBuildService(private val unityToolProvider: UnityToolProvider) 
 
         try {
             logFile.delete()
+            logFile.createNewFile()
         } catch (e: Exception) {
-            val message = "Failed to delete log file for unity"
+            val message = "Failed to delete and recreate log file for unity"
             logger.message(Message(message, Status.WARNING.text, null).asString())
             LOG.infoAndDebugDetails(message, e)
         }

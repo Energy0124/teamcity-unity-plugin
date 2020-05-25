@@ -262,6 +262,14 @@ class UnityRunnerBuildService(private val unityToolProvider: UnityToolProvider) 
             File(build.checkoutDirectory, logFilePath)
         }
 
+        try {
+            logFile.delete()
+        } catch (e: Exception) {
+            val message = "Failed to delete log file for unity"
+            logger.message(Message(message, Status.WARNING.text, null).asString())
+            LOG.infoAndDebugDetails(message, e)
+        }
+
         arguments.add(logFile.absolutePath)
 
         unityLogFileTailer = Tailer.create(logFile, object : TailerListenerAdapter() {
